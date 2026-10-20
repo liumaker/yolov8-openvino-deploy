@@ -1,0 +1,72 @@
+% !TEX program = xelatex
+% ============================================================
+%  YOLOv8 + OpenVINO 部署项目 —— 简历条目（可直接编译）
+%  编译：xelatex 简历-项目.tex
+%  用法：
+%   1) 只想要内容：复制 \section* 到 \end{document} 之间的部分，
+%      粘进你现有的简历模板即可（不依赖本文档的导言区）。
+%   2) 想自己看效果：直接编译本文件。
+%   3) 版面紧张时用文末「精简版」或「一行版」。
+% ============================================================
+\documentclass[11pt]{ctexart}
+
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue!45!black, urlcolor=blue!45!black}
+
+\setlist[itemize]{leftmargin=1.3em, itemsep=2pt, topsep=2pt, parsep=0pt}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% 项目标题 + 时间
+\newcommand{\projecttitle}[2]{%
+  \textbf{#1}\hfill{\small #2}\\[2pt]%
+}
+
+\begin{document}
+
+\section*{项目经历}
+
+\projecttitle{YOLOv8 + OpenVINO 端到端部署（CPU 推理与 INT8 量化）}{2026.10}
+{\small 个人项目 \quad 代码：\href{https://github.com/liumaker/yolov8-openvino-deploy}{github.com/liumaker/yolov8-openvino-deploy}}
+
+\begin{itemize}
+  \item \textbf{导出与转换}：打通 PyTorch\,$\rightarrow$\,ONNX（opset 12，静态/动态轴）\,$\rightarrow$\,OpenVINO IR（fp32/fp16）链路，
+        用 Netron 核对计算图；以同一输入张量对齐三端原始输出，相对误差 $3.2\times10^{-6}$，证明导出无语义损失。
+
+  \item \textbf{自研前后处理}：不依赖 Ultralytics 高层 API，手写 letterbox、输出解码（84$\,=\,$4$\,+\,$80，anchor-free）与按类 NMS，
+        与官方实现逐框对齐（5/5 框匹配，坐标偏差 $0.0001$\,px），单帧端到端 $56.9$\,ms。
+
+  \item \textbf{INT8 量化}：用 NNCF 做 PTQ（300 张校准图）。朴素量化掉点严重（$-5.9$ AP），改用 accuracy-aware 逐层回退，
+        COCO val2017 500 张上 mAP $0.3998\rightarrow0.3886$（$-1.1$ 点，$-2.8\%$），
+        单帧延迟 $30.7\rightarrow16.6$\,ms（$-46\%$），吞吐 $32\rightarrow57$\,FPS。
+
+  \item \textbf{并发与工程化}：benchmark\_app 对比 FP32/FP16/INT8 延迟与吞吐；实现多路视频流并发（每路独立 \texttt{InferRequest}），
+        4 路 INT8 总吞吐 $48$\,FPS（约为 FP32 的 $1.9\times$），进程 CPU $\sim630\%$，定位瓶颈为 CPU 算力；
+        沉淀 10 个可复现脚本与自动化验收（数值对齐 / mAP / 基准）。
+\end{itemize}
+
+{\small \textbf{技术栈}：Python · PyTorch · ONNX / ONNX Runtime · OpenVINO · NNCF · OpenCV · pycocotools}
+
+% \vspace{0.6em}
+% \rule{\linewidth}{0.4pt}
+
+% ============================================================
+%  精简版（版面紧张时替换上面的 itemize）
+% ============================================================
+% \begin{itemize}
+%   \item 完成 YOLOv8n 从 PyTorch 到 OpenVINO INT8 的 CPU 部署：ONNX 导出（opset 12、动态轴）、IR 转换、
+%         自研 letterbox/解码/NMS，与官方输出逐框一致（坐标误差 $<0.001$\,px）。
+%   \item NNCF PTQ（300 张校准图）+ accuracy-aware 逐层回退：mAP $0.3998\rightarrow0.3886$（$-1.1$ 点），
+%         单帧延迟 $30.7\rightarrow16.6$\,ms（$-46\%$）；4 路视频流并发 $48$\,FPS（FP32 $25$\,FPS）。
+% \end{itemize}
+%
+% ============================================================
+%  一行版（放在技能栏或项目列表的一行）
+% ============================================================
+% YOLOv8 + OpenVINO CPU 部署：INT8 量化后单帧延迟 $30.7\rightarrow16.6$\,ms（$-46\%$），
+% mAP 仅降 $1.1$ 点；4 路视频流并发 $48$\,FPS。
+
+\end{document}

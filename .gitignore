@@ -25,3 +25,8 @@ desktop.ini
 
 # Ultralytics 运行缓存（含字体/设置）
 Ultralytics/
+
+# LaTeX 编译中间产物
+texput.log
+*.aux
+*.out
