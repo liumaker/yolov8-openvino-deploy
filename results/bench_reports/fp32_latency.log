@@ -1,0 +1,16 @@
+WARNING:root:Failed to create directory for openvino_telemetry file: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\86183\\AppData\\Local\\Intel Corporation'
+WARNING:root:Failed to create directory for openvino_telemetry file: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\86183\\AppData\\Local\\Intel Corporation'
+WARNING:root:Could not create directory for storing client ID. No data will be sent.
+WARNING:BenchmarkApp:Turn on performance counters for CPU device since report type is average_counters.
+WARNING:BenchmarkApp:No input files were given for input 'images'!. This input will be filled with random values!
+[Step 1/11] Parsing and validating input arguments
+[Step 2/11] Loading OpenVINO Runtime
+[Step 3/11] Setting device configuration
+[Step 4/11] Reading model files
+[Step 5/11] Resizing model to match image sizes and given batch
+[Step 6/11] Configuring input of the model
+[Step 7/11] Loading the model to the device
+[Step 8/11] Querying optimal runtime parameters
+[Step 9/11] Creating infer requests and preparing input tensors
+[Step 10/11] Measuring performance (Start inference synchronously, limits: 150 iterations)
+[Step 11/11] Dumping statistics report

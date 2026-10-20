@@ -1,0 +1,30 @@
+{
+  "source_ir": "D:\\\u7b80\u5386\\yolov8-openvino-deploy\\models\\ir\\yolov8n_640_b1_fp32.xml",
+  "output_ir": "D:\\\u7b80\u5386\\yolov8-openvino-deploy\\models\\ir\\yolov8n_640_b1_int8.xml",
+  "calib_images": 300,
+  "preset": "performance",
+  "seconds": 39.9,
+  "xml_kb": 450.3,
+  "bin_mb": 3.294,
+  "ops": {
+    "Parameter": 1,
+    "Result": 1,
+    "Concat": 17,
+    "Sigmoid": 1,
+    "Reshape": 8,
+    "Constant": 508,
+    "Add": 71,
+    "Convolution": 64,
+    "Multiply": 66,
+    "Convert": 64,
+    "FakeQuantize": 71,
+    "Swish": 57,
+    "VariadicSplit": 8,
+    "MaxPool": 3,
+    "Interpolate": 2,
+    "Subtract": 2,
+    "Slice": 2,
+    "Transpose": 2,
+    "Softmax": 1
+  }
+}

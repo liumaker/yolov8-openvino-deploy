@@ -1,0 +1,66 @@
+{
+  "source_onnx": "D:\\简历\\yolov8-openvino-deploy\\models\\onnx\\yolov8n_640_b1.onnx",
+  "onnx_nodes": 234,
+  "openvino": "2026.4.1-22982-e213a147257-releases/2026/4",
+  "precision": [
+    {
+      "tag": "fp32",
+      "input_shape": "[1,3,640,640]",
+      "input_type": "<Type: 'float32'>",
+      "output_shape": "[1,84,8400]",
+      "num_ops": 402,
+      "num_ops_real": 240,
+      "op_counts": {
+        "Parameter": 1,
+        "Constant": 160,
+        "Convolution": 64,
+        "Add": 71,
+        "Swish": 57,
+        "VariadicSplit": 8,
+        "Concat": 17,
+        "MaxPool": 3,
+        "Interpolate": 2,
+        "Reshape": 8,
+        "Transpose": 2,
+        "Softmax": 1,
+        "Slice": 2,
+        "Subtract": 2,
+        "Multiply": 2,
+        "Sigmoid": 1,
+        "Result": 1
+      },
+      "xml_kb": 225.8,
+      "bin_mb": 12.71
+    },
+    {
+      "tag": "fp16",
+      "input_shape": "[1,3,640,640]",
+      "input_type": "<Type: 'float32'>",
+      "output_shape": "[1,84,8400]",
+      "num_ops": 533,
+      "num_ops_real": 371,
+      "op_counts": {
+        "Parameter": 1,
+        "Constant": 160,
+        "Convert": 131,
+        "Convolution": 64,
+        "Add": 71,
+        "Swish": 57,
+        "VariadicSplit": 8,
+        "Concat": 17,
+        "MaxPool": 3,
+        "Interpolate": 2,
+        "Reshape": 8,
+        "Transpose": 2,
+        "Softmax": 1,
+        "Slice": 2,
+        "Subtract": 2,
+        "Multiply": 2,
+        "Sigmoid": 1,
+        "Result": 1
+      },
+      "xml_kb": 304.1,
+      "bin_mb": 6.35
+    }
+  ]
+}

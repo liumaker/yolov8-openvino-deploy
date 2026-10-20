@@ -1,0 +1,116 @@
+{
+  "file": "D:\\简历\\yolov8-openvino-deploy\\models\\onnx\\yolov8n_640_dyn.onnx",
+  "size_mb": 13.08,
+  "opset": {
+    "ai.onnx": 12
+  },
+  "ir_version": 7,
+  "input_name": "images",
+  "input_dims": [
+    "batch",
+    "3",
+    "height",
+    "width"
+  ],
+  "output_name": "output0",
+  "output_dims": [
+    "batch",
+    "84",
+    "anchors"
+  ],
+  "dynamic_axes": {
+    "input[0]": "batch",
+    "input[2]": "height",
+    "input[3]": "width"
+  },
+  "num_nodes": 322,
+  "op_counts": {
+    "Conv": 64,
+    "Sigmoid": 58,
+    "Mul": 61,
+    "Split": 8,
+    "Add": 14,
+    "Concat": 32,
+    "MaxPool": 3,
+    "Resize": 2,
+    "Shape": 10,
+    "Gather": 9,
+    "Unsqueeze": 13,
+    "Cast": 6,
+    "Range": 6,
+    "ConstantOfShape": 3,
+    "Reshape": 17,
+    "Expand": 6,
+    "Transpose": 4,
+    "Softmax": 1,
+    "Slice": 2,
+    "Sub": 2,
+    "Div": 1
+  },
+  "runtime": "onnxruntime 1.23.2",
+  "output_shape": [
+    1,
+    84,
+    8400
+  ],
+  "dynamic_probes": [
+    {
+      "input": [
+        1,
+        3,
+        480,
+        640
+      ],
+      "output": [
+        1,
+        84,
+        6300
+      ],
+      "ok": true
+    },
+    {
+      "input": [
+        2,
+        3,
+        640,
+        640
+      ],
+      "output": [
+        2,
+        84,
+        8400
+      ],
+      "ok": true
+    },
+    {
+      "input": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "output": [
+        1,
+        84,
+        8400
+      ],
+      "ok": true
+    }
+  ],
+  "raw_equivalence": {
+    "max_abs_diff": 0.00238037109375,
+    "mean_abs_diff": 1.270784082407772e-06,
+    "box_max_diff": 0.00238037109375,
+    "cls_max_diff": 3.427267074584961e-06,
+    "tolerance": 0.02,
+    "verdict": "PASS"
+  },
+  "e2e_equivalence": {
+    "num_boxes_pt": 5,
+    "num_boxes_onnx": 5,
+    "max_xyxy_diff_px": 0.0001,
+    "max_conf_diff": 4.172325134277344e-07,
+    "classes_match": true,
+    "verdict": "PASS"
+  }
+}

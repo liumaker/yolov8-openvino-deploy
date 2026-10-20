@@ -1,0 +1,29 @@
+{
+  "onnx": "D:\\简历\\yolov8-openvino-deploy\\models\\onnx\\yolov8n_640_b1.onnx",
+  "image": "D:\\简历\\yolov8-openvino-deploy\\data\\samples\\bus.jpg",
+  "results": [
+    {
+      "precision": "fp32",
+      "compile_s": 0.23,
+      "max_abs": 0.002044677734375,
+      "mean_abs": 1.4850718618071261e-06,
+      "rel_max": 3.2085138441625783e-06,
+      "max_abs_box": 0.002044677734375,
+      "max_abs_cls": 1.996755599975586e-06,
+      "shape_ok": true,
+      "pass": true
+    },
+    {
+      "precision": "fp16",
+      "compile_s": 0.225,
+      "max_abs": 3.1806640625,
+      "mean_abs": 0.0020668943244613516,
+      "rel_max": 0.00499110667005971,
+      "max_abs_box": 3.1806640625,
+      "max_abs_cls": 0.0033064186573028564,
+      "shape_ok": true,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

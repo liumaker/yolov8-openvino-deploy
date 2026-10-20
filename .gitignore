@@ -1,0 +1,27 @@
+# ---------- 模型与权重（体积大，按 README「复现」一节重新生成）----------
+models/*.pt
+models/onnx/*.onnx
+models/ir/*.bin
+
+# ---------- 数据集与下载缓存 ----------
+data/coco/images/
+data/coco/annotations/
+datasets/
+*.zip
+
+# ---------- 运行产物 ----------
+results/*.log
+.ultralytics/
+.tmp/
+.tools/
+__pycache__/
+*.pyc
+
+# ---------- 编辑器 / 系统 ----------
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+
+# Ultralytics 运行缓存（含字体/设置）
+Ultralytics/

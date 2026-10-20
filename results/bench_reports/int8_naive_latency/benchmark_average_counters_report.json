@@ -1,0 +1,17 @@
+{
+    "report_type": "average",
+    "avg_performance": {
+        "nodes": [
+            {
+                "name": "images",
+                "node_type": "Parameter",
+                "status": "Status.NOT_RUN",
+                "real_time": "0.000",
+                "cpu_time": "0.000",
+                "exec_type": "unknown_I8"
+            }
+        ],
+        "total_real_time": "0.000",
+        "total_cpu_time": "0.000"
+    }
+}

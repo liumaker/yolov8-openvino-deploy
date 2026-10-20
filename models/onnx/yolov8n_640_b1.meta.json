@@ -1,0 +1,61 @@
+{
+  "file": "D:\\简历\\yolov8-openvino-deploy\\models\\onnx\\yolov8n_640_b1.onnx",
+  "size_mb": 12.85,
+  "opset": {
+    "ai.onnx": 12
+  },
+  "ir_version": 7,
+  "input_name": "images",
+  "input_dims": [
+    "1",
+    "3",
+    "640",
+    "640"
+  ],
+  "output_name": "output0",
+  "output_dims": [
+    "1",
+    "84",
+    "8400"
+  ],
+  "dynamic_axes": {},
+  "num_nodes": 234,
+  "op_counts": {
+    "Conv": 64,
+    "Sigmoid": 58,
+    "Mul": 58,
+    "Split": 8,
+    "Add": 8,
+    "Concat": 17,
+    "MaxPool": 3,
+    "Resize": 2,
+    "Reshape": 8,
+    "Transpose": 2,
+    "Softmax": 1,
+    "Slice": 2,
+    "Sub": 2,
+    "Div": 1
+  },
+  "runtime": "onnxruntime 1.23.2",
+  "output_shape": [
+    1,
+    84,
+    8400
+  ],
+  "raw_equivalence": {
+    "max_abs_diff": 0.00238037109375,
+    "mean_abs_diff": 1.270784082407772e-06,
+    "box_max_diff": 0.00238037109375,
+    "cls_max_diff": 3.427267074584961e-06,
+    "tolerance": 0.02,
+    "verdict": "PASS"
+  },
+  "e2e_equivalence": {
+    "num_boxes_pt": 5,
+    "num_boxes_onnx": 5,
+    "max_xyxy_diff_px": 0.0001,
+    "max_conf_diff": 4.172325134277344e-07,
+    "classes_match": true,
+    "verdict": "PASS"
+  }
+}

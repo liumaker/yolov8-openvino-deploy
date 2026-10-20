@@ -1,0 +1,21 @@
+{
+  "ir": "models\\ir\\yolov8n_640_b1_fp32.xml",
+  "device": "CPU",
+  "streams": 1,
+  "threads": null,
+  "hint": "latency",
+  "seconds": 10.01,
+  "frames_total": 189,
+  "fps_total": 18.87,
+  "fps_per_stream": 18.87,
+  "frames_per_stream": [
+    189
+  ],
+  "infer_ms_mean": 49.9,
+  "infer_ms_p95": 76.59,
+  "post_ms_mean": 3.07,
+  "cpu_proc_pct_mean": 329.7,
+  "cpu_proc_pct_max": 375.9,
+  "cpu_sys_pct_mean": 65.1,
+  "logical_cores": 8
+}

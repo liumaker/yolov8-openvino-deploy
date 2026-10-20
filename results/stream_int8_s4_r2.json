@@ -1,0 +1,24 @@
+{
+  "ir": "models\\ir\\yolov8n_640_b1_int8_aa2.xml",
+  "device": "CPU",
+  "streams": 4,
+  "threads": null,
+  "hint": "throughput",
+  "seconds": 10.1,
+  "frames_total": 486,
+  "fps_total": 48.13,
+  "fps_per_stream": 12.03,
+  "frames_per_stream": [
+    122,
+    111,
+    125,
+    128
+  ],
+  "infer_ms_mean": 78.45,
+  "infer_ms_p95": 129.29,
+  "post_ms_mean": 4.21,
+  "cpu_proc_pct_mean": 632.7,
+  "cpu_proc_pct_max": 743.8,
+  "cpu_sys_pct_mean": 95.0,
+  "logical_cores": 8
+}
